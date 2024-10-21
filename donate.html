@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Donate</title>
+    <style>
+        body {
+            background-color: #254336;
+            color: #DAD3BE;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #6B8A7A;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .regformf {
+            background-color: #DAD3BE;
+            padding: 20px;
+            border-radius: 10px;
+            color: #254336;
+        }
+        .logo {
+            font-size: 28px;
+            text-align: center;
+            color: #254336;
+            margin-bottom: 20px;
+        }
+        .input {
+            margin-bottom: 20px;
+        }
+        .input label {
+            display: block;
+            margin-bottom: 5px;
+            color: #254336;
+        }
+        .input input[type="text"],
+        .input input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #6B8A7A;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .radio {
+            margin-bottom: 20px;
+        }
+        .radio label {
+            margin-right: 20px;
+            color: #254336;
+        }
+        .image-radio-group {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .image-radio-group input[type="radio"] {
+            display: none;
+        }
+        .image-radio-group label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+        .image-radio-group label img {
+            border: 2px solid transparent;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+        .image-radio-group input[type="radio"]:checked+label img {
+            border-color: #254336;
+        }
+        .btn {
+            text-align: center;
+        }
+        .btn button {
+            background-color: #254336;
+            color: #DAD3BE;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn button:hover {
+            background-color: #B7B597;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="regformf">
+            <form action="connect1.php" method="post">
+                <h1 class="logo"><b>Donate Now</b></h1>
+                <div class="input">
+                    <label for="foodname">Food Name:</label>
+                    <input type="text" id="foodname" name="foodname" required />
+                </div>
+                <div class="radio">
+                    <label for="meal">Meal type:</label><br>
+                    <input type="radio" name="Mealtype" id="veg" value="veg" required />
+                    <label for="veg">Veg</label>
+                    <input type="radio" name="Mealtype" id="Non-veg" value="Non-veg">
+                    <label for="Non-veg">Non-veg</label>
+                </div>
+                <div class="input">
+                    <label for="food">Select the Category:</label>
+                    <div class="image-radio-group">
+                        <input type="radio" id="raw-food" name="Category" value="raw-food">
+                        <label for="raw-food">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuIdBbr89Rh65xcQWSPrOxlblOzxXzcRLrlw&s"
+                                alt="raw-food" width="100" height="100">
+                            Raw Food
+                        </label>
+                        <input type="radio" id="cooked-food" name="Category" value="cooked-food" checked>
+                        <label for="cooked-food">
+                            <img src="https://content.api.news/v3/images/bin/63bcc6be5601f1baec68847a21d4b447"
+                                alt="cooked-food" width="100" height="100">
+                            Cooked Food
+                        </label>
+                        <input type="radio" id="packed-food" name="Category" value="packed-food">
+                        <label for="packed-food">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrlgbTOsw9hI0NnifZ7OJkF59ZsVbv6FP-JA&s"
+                                alt="packed-food" width="100" height="100">
+                            Packed Food
+                        </label>
+                    </div>
+                </div>
+                <div class="input">
+                    <label for="quantity">Quantity (number of person/kg):</label>
+                    <input type="number" id="quantity" name="quantity" required />
+                </div>
+                <div>
+                    <p style="color: #254336; font-weight: bold;">Contact Details</p>
+                </div>
+                <div class="input">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required />
+                </div>
+                <div class="input">
+                    <label for="phoneno">Phone No:</label>
+                    <input type="text" id="phoneno" name="phoneno" maxlength="10" pattern="[0-9]{10}" required />
+                </div>
+                <div class="input">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required />
+                </div>
+                <div class="btn">
+                    <button type="submit" name="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
